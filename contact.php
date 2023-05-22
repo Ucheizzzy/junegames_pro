@@ -19,8 +19,17 @@
     <section class="contact">
       <div class="container">
         <div class="row">
+
+<?php
+if(isset($_REQUEST['m'])) { ?>
+    <div class='alert text-center alert-info mt-3 alert-dismissible fade show' role='alert'>
+        <strong> <?php echo $_REQUEST['m'] ?> </strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+      </div>;
+  <?php  } ?> 
+
           <div class="col-md-6 bg-dark rounded-3 p-4">
-            <form class="bg-dark" method="POST" action="">
+            <form class="bg-dark" method="POST" action="./mail/contact.php">
               <div
                 class="form-group d-flex justify-content-between align-items-center"
               >

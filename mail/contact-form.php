@@ -3,7 +3,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         # Replace this email with recipient email
-        $mail_to = "support@rim.ng";
+        $mail_to = "support@rim.ng,uche@rim.ng";
         
         # Sender Data
         $subject = trim($_POST["subject"]);
