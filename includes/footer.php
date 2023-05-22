@@ -34,10 +34,10 @@
             <div class="col-lg-4 col-md-6 text-center text-light">
               <h3>Useful Links</h3>
               <p>
-                <a href="about.html" class="text-light"> About</a>
+                <a href="about.php" class="text-light"> About</a>
               </p>
               <p>
-                <a href="privacy.html" class="text-light">Privacy Policy</a>
+                <a href="privacy.php" class="text-light">Privacy Policy</a>
               </p>
               <p>
                 <a href="privacy.php" class="text-light">Cookie Policy</a>

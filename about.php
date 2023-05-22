@@ -1,14 +1,15 @@
 <?php include_once('./includes/header.php'); ?>
+
     <!-- slider -->
 
-    <div class="subscribe-wrapper">
+    <div class="about-wrapper">
       <div class="container-fluid">
-        <div class="subscribe-item">
-          <div class="subscribe-img">
+        <div class="about-item">
+          <div class="about-img">
             <img src="./img/about/about-bg.jpg" alt="Image" />
           </div>
-          <div class="subscribe-text">
-            <div class="subscribe"></div>
+          <div class="about-text">
+            <h1>About Us</h1>
           </div>
         </div>
       </div>
@@ -16,8 +17,30 @@
 
     <!-- About us games -->
 
-    <section class="text-center text-uppercase">
-      <h2>How to Subscribe</h2>
+    <section class="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              src="./img/about/aboutus.jpg"
+              id="about-img"
+              class="rounded-3"
+            />
+          </div>
+          <div class="col-md-6 text-light">
+            <p>
+              JuneGames is a division of Junebox Services Ltd, a renowned
+              Nigerian mobile gaming firm that develops locally relevant games.
+              Junegames is dedicated to delivering world-class mobile games that
+              are specifically created with consumer engagement in mind. Our
+              flagship game series has over 500,000 active users. According to
+              statista, There are 91.5 million active mobile app users in
+              Nigeria; this figure is rising due to the growing use of
+              smartphones and mobile data.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- subscribe secton -->
@@ -134,4 +157,4 @@
       </div>
     </section>
 
-  <?php  include_once('./includes/footer.php'); ?>
+    <?php  include_once('./includes/footer.php'); ?>

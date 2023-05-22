@@ -15,15 +15,38 @@ $msisdn = $_POST['number'];
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>JuneGames | Play for fun</title>
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		 <title>JuneGames | Play for fun!</title>
+    <!-- <link rel="stylesheet" href="../../css/style.css" type="text/css" /> -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" />
+    <link
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      href="../../css/owl.carousel.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../css/owl.theme.default.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../css/boxicons.min.css" type="text/css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- css animate -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
  <script>
       //function to fix height of iframe!
@@ -53,14 +76,23 @@ $msisdn = $_POST['number'];
 </script>
 
 <style type="text/css"> 
-    html, body {
+    body {
         height: 100%;
         margin: 0px;
-        
+       background-color: #000 !important;   
     }
-    .container {
-        height: 100%;
+    .nav-item .nav-link:hover {
+        color: #ff4d29 !important;
     }
+    .btn-info{
+      color: dark-gray !important;
+      font-size: 15px !important;
+    }
+    .btn-info:hover{
+      background-color: #ff4d29 !important;
+      border:0 !important;
+      color: #fff !important;
+    } 
 
 </style>
      <link rel="stylesheet" href="../style.css" type="text/css" />
@@ -84,14 +116,13 @@ $msisdn = $_POST['number'];
       </ul>
     </div>
 
-    <a class="btn btn-info rounded-3 text-white btn-sm navbar-brand"><?php echo $_SESSION['june.number']; ?></a>
+    <a class="btn btn-info rounded-3  navbar-brand"><?php echo $_SESSION['june.number']; ?></a>
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
    
   </div>
 </nav>
-
 
     
       <iframe src="play.html" class="mt-5" height="100%" width="100%" frameborder="0" noresize="noresize" data-view="fullScreenPreview" style="width:100%; height: 100%; border:0; margins:0"></iframe>

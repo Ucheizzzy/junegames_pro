@@ -1,3 +1,11 @@
+<?php
+if (isset($_REQUEST['signout'])){
+  unset($_SESSION["june.number"]);
+   header("Location: http://games.juneboxservices.com");
+}
+include_once('../includes/api.php'); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +18,7 @@
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css" />
     <link
       rel="stylesheet"
-      href="../css/owl.theme.default.min.css"
+      href="./css/owl.theme.default.min.css"
       type="text/css"
     />
     <link rel="stylesheet" href="../css/boxicons.min.css" type="text/css" />
@@ -33,30 +41,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!-- //Global site tag (gtag.js) - Google Analytics
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-141652354-3"
-    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141652354-3"></script>
     <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      gtag('config', 'UA-141652354-3')
-    </script> -->
+      gtag('config', 'UA-141652354-3');
+    </script>
+  
   </head>
 
   <body>
-    <!-- TOP NAV -->
+
+     <!-- TOP NAV -->
     <div class="top-nav" id="home">
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <div class="col-auto">
-            <a href="../index.html">
+            <a href="../index.php">
               <img
                 src="../img/logo/juneboxgames-preview.png"
                 alt="logo image"
@@ -66,33 +70,29 @@
             </a>
           </div>
           <div class="col-auto">
+   
+      <?php if(strpos($user, 'active') !== false){ ?>
+        <a
+              class="btn btn-brand btn-info btn-sm px-3 py-2 rounded-3"
+              href="./portal/index.php"
+            >
+              Dashboard
+            </a>
+          <?php } else{ ?>
             <a
               class="btn btn-brand btn-info btn-sm px-3 py-2 rounded-3"
               href="#"
               data-bs-toggle="modal"
               data-bs-target="#userLogin"
             >
-              SignUp/Login
+              Signup/Login
             </a>
+            <?php } ?>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- slider -->
-
-    <!-- <div class="about-wrapper">
-      <div class="container-fluid">
-        <div class="about-item">
-          <div class="about-img">
-            <img src="../img/about/about-bg.jpg" alt="Image" />
-          </div>
-          <div class="about-text">
-            <h1>Welcome Back!</h1>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <!-- Portal games section -->
 
@@ -102,7 +102,7 @@
           <div class="col-md-12">
             <h2 class="text-info text-uppercase">Game Portal</h2>
             <h3 class="text-uppercase">Welcome to your dashboard</h3>
-            <p>is ready to play any game, any time..</p>
+            <p><?php  echo $msisdn; ?> is ready to play any game, any time..</p>
           </div>
         </div>
       </div>
@@ -114,198 +114,225 @@
               <span style="border-bottom: 10px solid #31d2f2">Your Games</span>
             </h4>
 
+
+            <a href="01">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/driver.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>LAGOS DRIVER</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
-                <span href="#home" class="portal-button"> Play Now </span>
+                <span href="01" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
 
+            <a href="02">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/coins.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>COLLECT THE COINS</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class=" text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+          </a>
 
+          <a href="03">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/fruits.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>CHOOSE CORRECT FRUITS</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+          </a>
+
+          <a href="04">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/ballons.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>BLAST THE BALLOONS</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
+
+            <a href="05">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/touchcoin.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>TOUCH FAST AND COLLECT COINS</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
+            <a href="06">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/space.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>SPACE GAME</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
+            <a href="07">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/capital.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>TOUCH CAPITAL LETTERS</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
+            <a href="08">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/balance.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>NINJA BALANCE</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
+            <a href="09">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/pump.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>PUMP AIR INTO BALLOON</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
+
+            <a href="10">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/animals.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>MATCH ANIMALS</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
+
+            <a href="11">
             <div class="portal-case row d-flex align-items-center">
               <div class="col-md-2 portal-img">
                 <img src="../img/portal/amass.jpg" class="" />
               </div>
               <div class="col-md-8 portal-text">
                 <h6>AMASS THE BOXES</h6>
-                <div class="mb-0">
+                <div class="mb-0 text-light">
                   <i class="mr-2 fas fa-mobile-alt"></i>
                   <i class="mr-2 fab fa-html5"></i>
                   <i class="fab fa-apple"></i>
-                  <p>Action, Adventure</p>
+                  <p class="text-light">Action, Adventure</p>
                 </div>
               </div>
               <div class="col-md-2 portal-btn">
                 <span href="#home" class="portal-button"> Play Now </span>
               </div>
             </div>
+            </a>
           </div>
           <div class="col-lg-4 col-sm-12">
-            <a href="#" class="portal-signout mx-5 mt-3">SignOut</a>
+            <a href="?signout=0" class="portal-signout mx-5 mt-3">SignOut</a>
           </div>
         </div>
       </div>
@@ -346,19 +373,19 @@
             <div class="col-lg-4 col-md-6 text-center text-light">
               <h3>Useful Links</h3>
               <p>
-                <a href="about.html" class="text-light"> About</a>
+                <a href="../about.php" class="text-light"> About</a>
               </p>
               <p>
-                <a href="privacy.html" class="text-light">Privacy Policy</a>
+                <a href="../privacy.php" class="text-light">Privacy Policy</a>
               </p>
               <p>
-                <a href="privacy.php" class="text-light">Cookie Policy</a>
+                <a href="../privacy.php" class="text-light">Cookie Policy</a>
               </p>
             </div>
             <div class="col-lg-4 col-md-6 text-center">
               <h3>Support</h3>
               <p>
-                <a href="contact.php" class="text-light"> Contact Us</a>
+                <a href="../contact.php" class="text-light"> Contact Us</a>
               </p>
             </div>
           </div>
@@ -396,9 +423,7 @@
                   type="text"
                   class="form-control border-info bg-dark text-white"
                   name="phone"
-                  value="<?php echo $msisdn; ?>"
-                  placeholder="<?php if(!empty($_SERVER['HTTP_MSISDN'])){ echo $msisdn;}
-else{echo 'Phone number';}	?>"
+                  value="234"
                 />
               </div>
               <!--div class="form-group">

@@ -34,6 +34,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141652354-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-141652354-3');
+    </script>
   
   </head>
 
@@ -44,7 +53,7 @@
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <div class="col-auto">
-            <a href="index.html">
+            <a href="index.php">
               <img
                 src="./img/logo/juneboxgames-preview.png"
                 alt="logo image"
@@ -69,7 +78,7 @@
               data-bs-toggle="modal"
               data-bs-target="#userLogin"
             >
-              SignUp/Login
+              Signup/Login
             </a>
             <?php } ?>
           </div>
