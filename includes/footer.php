@@ -48,6 +48,9 @@
               <p>
                 <a href="contact.php" class="text-light"> Contact Us</a>
               </p>
+              <p>
+               <a href="subscribe.php" class="text-light"> How to subscribe</a>
+              </p>
             </div>
           </div>
         </div>
@@ -80,17 +83,24 @@
           <div class="modal-body">
             <form class="input-transparent" action="" method="">
               <div class="form-group">
+                <?php if(isset($_SERVER['HTTP_MSISDN'])) { ?>
+                <input
+                  type="hidden"
+                  class="form-control border-info bg-dark text-white"
+                  name="phone"
+                  value="<?php  echo $msisdn; ?>"
+                />
+                <?php } else{ ?>
                 <input
                   type="text"
                   class="form-control border-info bg-dark text-white"
                   name="phone"
                   value="234"
-             
+                
                 />
+                <?php } ?>
               </div>
-              <!--div class="form-group">
-                <input type="password" class="form-control border-secondary" name="password" placeholder="Password">
-              </div-->
+        
               <div class="form-group d-flex justify-content-between">
                 <div class="custom-control custom-checkbox">
                   <input
@@ -103,11 +113,11 @@
                     >Remember me</label
                   >
                 </div>
-                <!--a class="small-3" href="#">Forgot password?</a-->
+            
               </div>
               <div class="form-group mt-3">
                 <button class="btn btn-block btn-info w-100" type="submit">
-                  Subscribe
+                  Login
                 </button>
               </div>
             </form>

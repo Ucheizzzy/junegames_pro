@@ -389,6 +389,9 @@ include_once('../includes/api.php');
               <p>
                 <a href="../contact.php" class="text-light"> Contact Us</a>
               </p>
+              <p>
+                <a href="../subscribe.php" class="text-light"> How to subscribe</a>
+              </p>
             </div>
           </div>
         </div>
